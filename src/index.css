@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.quote-box {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: tomato;
+}
+
+#quote-box {
+  padding: 1rem 4rem;
+  background-color: white;
+  max-width: max-content;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  border-radius: 0.3rem;
+}
+
+#text {
+  grid-column: 1/3;
+}
+
+#text p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 3ch;
+  max-width: 25vw;
+}
+
+#author {
+  grid-column: 2/3;
+  text-align: right;
+}
+
+.bottom {
+  grid-column: 1/3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#post {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#quote-btn button {
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 0.3rem;
+  background-color: turquoise;
+  color: white;
+  cursor: pointer;
+}
