@@ -4,23 +4,10 @@ import Quotes, { colors } from "./quotes";
 class Quote_box extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
       quote: "",
       color: "",
     };
-  }
-  handleClick() {
-    const allQuotes = Quotes;
-    const allColors = colors;
-    const randomIndex = Math.floor(Math.random() * allQuotes.length);
-    const randomColorIndex = Math.floor(Math.random() * allColors.length);
-    const randomQuote = allQuotes[randomIndex];
-    const randomColor = allColors[randomColorIndex];
-    this.setState({
-      quote: randomQuote,
-      color: randomColor,
-    });
   }
   render() {
     const allQuotes = Quotes;
@@ -29,13 +16,17 @@ class Quote_box extends React.Component {
     const randomColorIndex = Math.floor(Math.random() * allColors.length);
     const randomQuote = allQuotes[randomIndex];
     const randomColor = allColors[randomColorIndex];
+
+    const handleClick = () => {
+      this.setState({
+        quote: randomQuote,
+        color: randomColor,
+      });
+    };
+
     return (
       <div style={{ backgroundColor: this.state.color }} className="quote-box">
-        <div
-          style={{ color: this.state.color }}
-          id="quote-box"
-          onLoad={this.handleClick}
-        >
+        <div style={{ color: this.state.color }} id="quote-box">
           <div id="text">
             <p>
               {this.state.quote == ""
@@ -61,7 +52,7 @@ class Quote_box extends React.Component {
             <div id="quote-btn">
               <button
                 style={{ backgroundColor: this.state.color }}
-                onClick={this.handleClick}
+                onClick={handleClick}
               >
                 New Quote
               </button>

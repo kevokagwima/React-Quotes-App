@@ -28,6 +28,7 @@ code {
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   border-radius: 0.3rem;
+  color: tomato;
 }
 
 #text {
@@ -63,7 +64,7 @@ code {
   border: none;
   padding: 0.5em 1em;
   border-radius: 0.3rem;
-  background-color: turquoise;
+  background-color: tomato;
   color: white;
   cursor: pointer;
 }
