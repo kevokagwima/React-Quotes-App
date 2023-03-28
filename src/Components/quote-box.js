@@ -29,14 +29,14 @@ class Quote_box extends React.Component {
         <div style={{ color: this.state.color }} id="quote-box">
           <div id="text">
             <p>
-              {this.state.quote == ""
+              {this.state.quote === ""
                 ? randomQuote.text
                 : this.state.quote.text}
             </p>
           </div>
           <div id="author">
             -{" "}
-            {this.state.quote == ""
+            {this.state.quote === ""
               ? randomQuote.author
               : this.state.quote.author}
           </div>
