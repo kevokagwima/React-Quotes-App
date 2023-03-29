@@ -1,5 +1,5 @@
 import React from "react";
-import Quotes, { colors } from "./quotes";
+import colors from "./quotes";
 
 class Quote_box extends React.Component {
   constructor(props) {
@@ -8,57 +8,64 @@ class Quote_box extends React.Component {
       quote: "",
       color: "",
     };
-  }
-  render() {
-    const allQuotes = Quotes;
-    const allColors = colors;
-    const randomIndex = Math.floor(Math.random() * allQuotes.length);
-    const randomColorIndex = Math.floor(Math.random() * allColors.length);
-    const randomQuote = allQuotes[randomIndex];
-    const randomColor = allColors[randomColorIndex];
 
-    const handleClick = () => {
+    this.getQuote = () => {
+      fetch("https://type.fit/api/quotes").then((res) => {
+        res.json().then((data) => {
+          const randomIndex = Math.floor(Math.random() * data.length);
+          this.setState({
+            quote: data[randomIndex],
+          });
+        });
+      });
+      const allColors = colors;
+      const randomColorIndex = Math.floor(Math.random() * allColors.length);
+      const randomColor = allColors[randomColorIndex];
       this.setState({
-        quote: randomQuote,
         color: randomColor,
       });
     };
 
+    this.componentDidMount = () => {
+      setInterval(() => {
+        this.getQuote();
+      }, 10000);
+    };
+
+    this.handleClick = () => {
+      this.getQuote();
+    };
+  }
+
+  render() {
     return (
       <div style={{ backgroundColor: this.state.color }} className="quote-box">
         <div style={{ color: this.state.color }} id="quote-box">
           <div id="text">
             <p>
-              {this.state.quote === ""
-                ? randomQuote.text
-                : this.state.quote.text}
+              {this.state.quote === "" ? "Loading..." : this.state.quote.text}
             </p>
           </div>
           <div id="author">
-            -{" "}
-            {this.state.quote === ""
-              ? randomQuote.author
-              : this.state.quote.author}
+            - {this.state.quote === "" ? "Loading..." : this.state.quote.author}
           </div>
           <div className="bottom">
-            <div id="post">
-              <a
-                target="_blank"
-                href="twitter.com/intent/tweet/{this.state.quote}"
-              >
-                Twitter
+            <div style={{ backgroundColor: this.state.color }} id="post">
+              <a target="_blank" href="#">
+                <i class="fa fa-twitter"></i>
               </a>
             </div>
             <div id="quote-btn">
               <button
                 style={{ backgroundColor: this.state.color }}
-                onClick={handleClick}
+                onClick={this.handleClick}
               >
                 New Quote
               </button>
             </div>
           </div>
         </div>
+        <p id="by">By Kevin Kagwima</p>
       </div>
     );
   }

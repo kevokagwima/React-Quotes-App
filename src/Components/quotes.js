@@ -1,47 +1,54 @@
-const Quotes = [
-  {
-    text: "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
-    author: "Mother Teresa",
-  },
-  {
-    text: "When you reach the end of your rope, tie a knot in it and hang on.",
-    author: "Franklin D. Roosevelt",
-  },
-  {
-    text: "Always remember that you are absolutely unique. Just like everyone else.",
-    author: "Margaret Mead",
-  },
-  {
-    text: "Don't judge each day by the harvest you reap but by the seeds that you plant.",
-    author: "Robert Louis Stevenson",
-  },
-  {
-    text: "The future belongs to those who believe in the beauty of their dreams.",
-    author: "Eleanor Roosevelt",
-  },
-  {
-    text: "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
-    author: "Benjamin Franklin",
-  },
-  {
-    text: "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.",
-    author: "Helen Keller",
-  },
-  {
-    text: "It is during our darkest moments that we must focus to see the light.",
-    author: "Aristotle",
-  },
-  {
-    text: "Whoever is happy will make others happy too",
-    author: "Anne Frank",
-  },
-  {
-    text: "Do not go where the path may lead, go instead where there is no path and leave a trail.",
-    author: "Ralph Waldo Emerson",
-  },
+var colors = [
+  "#FF6633",
+  "#FFB399",
+  "#FF33FF",
+  "#FFFF99",
+  "#00B3E6",
+  "#E6B333",
+  "#3366E6",
+  "#999966",
+  "#99FF99",
+  "#B34D4D",
+  "#80B300",
+  "#809900",
+  "#E6B3B3",
+  "#6680B3",
+  "#66991A",
+  "#FF99E6",
+  "#CCFF1A",
+  "#FF1A66",
+  "#E6331A",
+  "#33FFCC",
+  "#66994D",
+  "#B366CC",
+  "#4D8000",
+  "#B33300",
+  "#CC80CC",
+  "#66664D",
+  "#991AFF",
+  "#E666FF",
+  "#4DB3FF",
+  "#1AB399",
+  "#E666B3",
+  "#33991A",
+  "#CC9999",
+  "#B3B31A",
+  "#00E680",
+  "#4D8066",
+  "#809980",
+  "#E6FF80",
+  "#1AFF33",
+  "#999933",
+  "#FF3380",
+  "#CCCC00",
+  "#66E64D",
+  "#4D80CC",
+  "#9900B3",
+  "#E64D66",
+  "#4DB380",
+  "#FF4D4D",
+  "#99E6E6",
+  "#6666FF",
 ];
 
-const colors = ["red", "blue", "green", "orange", "yelllow", "pink", "purple"];
-
-export default Quotes;
-export { colors };
+export default colors;
