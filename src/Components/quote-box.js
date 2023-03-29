@@ -51,7 +51,10 @@ class Quote_box extends React.Component {
           </div>
           <div className="bottom">
             <div style={{ backgroundColor: this.state.color }} id="post">
-              <a target="_blank" href="#">
+              <a
+                target="_blank"
+                href={`https://twitter.com/intent/tweet?text=${this.state.quote.text}`}
+              >
                 <i class="fa fa-twitter"></i>
               </a>
             </div>
