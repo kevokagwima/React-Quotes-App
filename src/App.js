@@ -1,5 +1,5 @@
 import "./App.css";
-import Quote_box from "./Components/quote-box";
+import Quote_box from "./Components/quotes";
 
 function App() {
   return <Quote_box />;
